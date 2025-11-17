@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ssbb/core/utils/assets.dart';
+import 'package:get/get.dart';
+import 'package:ssbb/features/home/presentation/views/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -17,7 +19,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initslidingAnimation();
+    navigetorToHmeView();
   }
+
+  
+
   @override
   void dispose() {
     animationController.dispose();
@@ -59,8 +65,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
       ],
     );
   }
-   void initslidingAnimation() {
-    
+
+  void initslidingAnimation() {
     animationController = AnimationController(
       vsync: this,
       duration: Duration(seconds: 1),
@@ -70,5 +76,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
       end: Offset.zero,
     ).animate(animationController);
     animationController.forward();
+  }
+
+  
+  void navigetorToHmeView() {
+     Future.delayed(Duration(seconds: 2), () {
+      Get.to(HomeView(),transition: Transition.fade,duration: Duration(microseconds: 300));
+    });
   }
 }
