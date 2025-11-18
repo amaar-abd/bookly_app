@@ -39,7 +39,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
         Center(
           child: Stack(
             children: [
-              Image.asset(AssetsData.logotwo, height: 300, width: 300),
+              Image.asset(AssetsData.logo, height: 300, width: 300),
               Positioned(
                 top: 200,
                 left: 20,
