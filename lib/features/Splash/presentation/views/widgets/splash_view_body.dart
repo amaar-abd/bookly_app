@@ -80,7 +80,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   
   void navigetorToHmeView() {
-     Future.delayed(Duration(seconds: 2), () {
+     Future.delayed(Duration(seconds: 4), () {
       Get.to(HomeView(),transition: Transition.fade,duration: Duration(microseconds: 300));
     });
   }
