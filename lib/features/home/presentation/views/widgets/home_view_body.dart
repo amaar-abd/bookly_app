@@ -9,15 +9,17 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        CustomeAppBar(),
-        CustomeListViewItem(),
-        SizedBox(height: 40),
-        Text('Best Seller', style: Styles.titleMeduim),
-        CustomeitemTWoListView(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CustomeAppBar(),
+          CustomeListViewItem(),
+          SizedBox(height: 40),
+          Text('Best Seller', style: Styles.titleMeduim20),
+          CustomeitemTWoListView(),
+        ],
+      ),
     );
   }
 }
