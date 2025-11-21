@@ -7,18 +7,18 @@ class CustomAppBarBookDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        child: Row(
-          children: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.close, size: 35)),
-            Spacer(),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(FontAwesomeIcons.cartArrowDown),
-            ),
-          ],
-        ),
+      child: Row(
+        children: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.close, size: 35, color: Colors.white),
+          ),
+          Spacer(),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(FontAwesomeIcons.cartArrowDown, color: Colors.white),
+          ),
+        ],
       ),
     );
   }
