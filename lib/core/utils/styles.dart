@@ -11,4 +11,8 @@ abstract class Styles {
     color: Colors.grey,
     fontWeight: FontWeight.w300,
   );
+  static const titleMeduim30 = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.w600,
+  );
 }

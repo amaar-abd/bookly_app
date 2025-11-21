@@ -55,8 +55,8 @@ class CustomeItemTwo extends StatelessWidget {
                         Icon(Icons.star, color: Colors.amber),
                         Text(
                           '4.8 ',
-                          style: Styles.titleMeduim20.copyWith(
-                            fontWeight: FontWeight.w400,
+                          style: Styles.subtitlebody.copyWith(
+                            color: Colors.white,
                           ),
                         ),
                         Text('(2390)', style: Styles.subtitlebody),
