@@ -14,10 +14,10 @@ class HomeViewBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomeAppBar(),
-          CustomeListViewItem(),
+          BooklyListViewItem(),
           SizedBox(height: 40),
           Text('Best Seller', style: Styles.titleMeduim20),
-          CustomeitemTWoListView(),
+          BestSellerListView(),
         ],
       ),
     );

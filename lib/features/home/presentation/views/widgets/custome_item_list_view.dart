@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ssbb/features/home/presentation/views/widgets/custome_item.dart';
 
-class CustomeListViewItem extends StatelessWidget {
-  const CustomeListViewItem({super.key});
+class BooklyListViewItem extends StatelessWidget {
+  const BooklyListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
