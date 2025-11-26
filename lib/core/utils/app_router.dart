@@ -9,13 +9,8 @@ abstract class AppRouter {
     routes: [
       GoRoute(path: '/', builder: (context, state) => const SplashView()),
       GoRoute(path: '/homeview', builder: (context, state) => const HomeView()),
-      GoRoute(
-        path: '/bookdetailsview',
-        builder: (context, state) => const BookDetailsView(),
-      ),
-      GoRoute(
-        path: '/searchview',
-        builder: (context, state) => const SearchView(),
+      GoRoute(path: '/bookdetailsview',builder: (context, state) => const BookDetailsView(),),
+      GoRoute(path: '/searchview',builder: (context, state) => const SearchView(),
       ),
     ],
   );
