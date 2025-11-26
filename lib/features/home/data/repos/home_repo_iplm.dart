@@ -14,7 +14,7 @@ class HomeRepoIplm implements HomeRepo {
     try {
       var data = await apiService.get(
         endpoint:
-            'https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&Sorting=newset &q=subject:programming',
+            'https://www.googleapis.com/books/v1/volumes?q=programming&orderBy=newest&filter=free-ebooks',
       );
       List<BookModel> books = [];
       for (var element in data['items']) {
@@ -30,7 +30,22 @@ class HomeRepoIplm implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() {
-    throw UnimplementedError();
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async{
+    try {
+      var data = await apiService.get(
+        endpoint:
+            'https://www.googleapis.com/books/v1/volumes?q=programming&filter=free-ebooks',
+      );
+      List<BookModel> books = [];
+      for (var element in data['items']) {
+        books.add(BookModel.fromJson(element));
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(e.toString()));
+    }
   }
 }
