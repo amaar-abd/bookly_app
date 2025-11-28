@@ -12,11 +12,10 @@ class BooklyBooksCubit extends Cubit<BooklyBooksState> {
   final HomeRepo homeRepo;
 
   Future<void> fetchFeaturedBooks() async {
-    
     emit(BooklyBooksLoading());
     var result = await homeRepo.fetchFeaturedBooks();
-    result.fold(
-      (failure) => emit(BooklyBooksFailuer(errorMesage: failure.errorMessege)),
+    
+    result.fold((failure) => emit(BooklyBooksFailuer(errorMesage: failure.errorMessege)),
       (books) => emit(BooklyBooksSuccess(books: books)),
     );
   }
