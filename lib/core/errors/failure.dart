@@ -38,7 +38,12 @@ class ServerFailure extends Failure {
 
   factory ServerFailure.fromResponse(int statusCode, dynamic response) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
-      return ServerFailure(response['error']['message']);
+      if (response is Map && response['error'] is Map) {
+        return ServerFailure(response['error']['message'].toString());
+      }
+      // return ServerFailure(response.toString());
+      return ServerFailure('Error $statusCode: ${response.toString()}');
+
     } else if (statusCode == 404) {
       return ServerFailure('method not found ');
     } else if (statusCode == 500) {

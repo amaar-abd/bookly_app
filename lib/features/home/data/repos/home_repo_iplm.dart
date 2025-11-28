@@ -6,9 +6,12 @@ import 'package:ssbb/features/home/data/models/book_model/book_model.dart';
 import 'package:ssbb/features/home/data/repos/home_repo.dart';
 //ملتزمة بتعريف جميع الدوال (methods) الموجودة في الكلاسHomeRepo
 
+// هو التنفيذ الحقيقي للـ Repository
+// فقط هذا الملف هو المسؤول عن الوصول الحقيقي للداتا
 class HomeRepoIplm implements HomeRepo {
   final ApiService apiService;
   HomeRepoIplm(this.apiService);
+
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewsedBooks() async {
     try {
@@ -30,7 +33,7 @@ class HomeRepoIplm implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async{
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await apiService.get(
         endpoint:
